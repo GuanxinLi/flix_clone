@@ -1,0 +1,6 @@
+framework module Pods_flix_cloneTests {
+  umbrella header "Pods-flix_cloneTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
