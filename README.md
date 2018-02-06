@@ -36,7 +36,7 @@ include better ways to implement something, how to extend your app in certain wa
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='file:///Users/guanxinli/Documents/Xcode/tumblr/flix_clone.gif' title='flix_clone Demo' width='' alt='flix_clone Demo' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
