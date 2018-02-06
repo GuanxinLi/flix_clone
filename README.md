@@ -36,7 +36,7 @@ include better ways to implement something, how to extend your app in certain wa
 
 Here's a walkthrough of implemented user stories:
 
-<img src='https://imgur.com/a/gewR4' title='flix_clone Demo' width='100' alt='flix_clone Demo' />
+<img src='https://imgur.com/a/gewR4' title='flix_clone Demo' width='' alt='flix_clone Demo' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
