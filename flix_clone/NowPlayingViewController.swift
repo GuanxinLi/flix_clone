@@ -13,19 +13,21 @@ import AlamofireImage
 class NowPlayingViewController: UIViewController, UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     var movies: [[String: Any]] = []
     
     var refreshControl: UIRefreshControl!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-    
         refreshControl = UIRefreshControl()
+        activityIndicator.startAnimating()
+        tableView.rowHeight = 230
         refreshControl.addTarget(self, action: #selector (NowPlayingViewController.didPullToRefresh(_:)), for: .valueChanged)
         tableView.insertSubview(refreshControl, at: 0)
         tableView.dataSource = self
-        
         fetchMovies()
     }
     
@@ -51,6 +53,7 @@ class NowPlayingViewController: UIViewController, UITableViewDataSource {
                     .jsonObject(with: data, options:[]) as! [String: Any]
                 let movies = dataDicationary["results"] as! [[String: Any]]
                 self.movies = movies
+                self.activityIndicator.stopAnimating()
                 self.tableView.reloadData()
                 self.refreshControl.endRefreshing()
             }
@@ -87,10 +90,7 @@ class NowPlayingViewController: UIViewController, UITableViewDataSource {
         
         return cell
     }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return CGFloat(120)
-    }
+ 
     
 
     override func didReceiveMemoryWarning() {
