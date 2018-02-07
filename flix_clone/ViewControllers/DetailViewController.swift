@@ -11,7 +11,7 @@ import UIKit
 enum MovieKeys {
     static let title = "title"
     static let backdropPath = "backdrop_path"
-    static let releaseDate  = "relase_date"
+    static let releaseDate  = "release_date"
     static let overview  = "overview"
     static let posterPath = "poster_path"
     
@@ -49,6 +49,8 @@ class DetailViewController: UIViewController {
  
         }
     }
+    
+    
     
 
 
