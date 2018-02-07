@@ -2,20 +2,21 @@
 # platform :ios, '9.0'
 
 target 'flix_clone' do
-  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
-  use_frameworks!
-
-  # Pods for flix_clone
-  pod 'AlamofireImage', '~> 3.3'
-
-  target 'flix_cloneTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
-  target 'flix_cloneUITests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
+	# Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+	use_frameworks!
+	# Pods for flix_clone
+	pod 'PKHUD', '~> 5.0'
+	pod 'AlamofireImage'
 end
+
+target 'flix_cloneTests' do
+	inherit! :search_paths
+	# Pods for testing
+end
+
+target 'flix_cloneUITests' do
+	inherit! :search_paths
+	# Pods for testing
+end
+
+
