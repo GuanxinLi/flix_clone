@@ -23,9 +23,8 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="color" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </activityIndicatorView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wiz-cj-WDO">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wiz-cj-WDO">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MovieCell" rowHeight="225" id="MJw-w0-qzC" customClass="MovieCell" customModule="flix_clone" customModuleProvider="target">
@@ -35,27 +34,31 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="224.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="guP-dY-qgR">
-                                                    <rect key="frame" x="106" y="28" width="269" height="186"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="guP-dY-qgR">
+                                                    <rect key="frame" x="114" y="28" width="261" height="186"/>
                                                     <string key="text">Despite his family’s baffling generations-old ban on music, Miguel dreams of becoming an accomplished musician like his idol, Ernesto de la Cruz. Desperate to prove his talent, Miguel finds himself in the stunning and colorful Land of the Dead following a mysterious chain of events. Along the way, he meets charming trickster Hector, and together, they set off on an extraordinary journey to unlock the real story behind Miguel's family history.</string>
                                                     <fontDescription key="fontDescription" type="system" weight="thin" pointSize="13"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Coco" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ji5-id-Dc5">
-                                                    <rect key="frame" x="106" y="0.0" width="269" height="32"/>
+                                                    <rect key="frame" x="114" y="6.5" width="261" height="25.5"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xar-Qr-oCu">
-                                                    <rect key="frame" x="8" y="18" width="90" height="189"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xar-Qr-oCu">
+                                                    <rect key="frame" x="8" y="8" width="98" height="208.5"/>
                                                     <color key="backgroundColor" red="0.40245615165488241" green="0.98132258650000004" blue="0.50538899320113262" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </imageView>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="Xar-Qr-oCu" secondAttribute="bottom" constant="8" id="DVW-fX-aZU"/>
+                                                <constraint firstItem="Xar-Qr-oCu" firstAttribute="leading" secondItem="k9v-kc-UJP" secondAttribute="leading" constant="8" id="cO3-CT-Vv1"/>
+                                                <constraint firstItem="Xar-Qr-oCu" firstAttribute="top" secondItem="k9v-kc-UJP" secondAttribute="top" constant="8" id="fzp-rr-aXj"/>
+                                                <constraint firstItem="guP-dY-qgR" firstAttribute="leading" secondItem="Xar-Qr-oCu" secondAttribute="trailing" constant="8" id="yM0-RW-8FH"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="overviewLabel" destination="guP-dY-qgR" id="oXF-th-gbX"/>
@@ -67,7 +70,13 @@
                                 </prototypes>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="1" green="0.27243828461252217" blue="0.038158689818768354" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="wiz-cj-WDO" secondAttribute="bottom" id="8Mk-jL-xiX"/>
+                            <constraint firstItem="wiz-cj-WDO" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Ub1-tI-uXI"/>
+                            <constraint firstItem="wiz-cj-WDO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="XM1-ih-Hiq"/>
+                            <constraint firstItem="wiz-cj-WDO" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="voi-uN-aGM"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Movies" id="unX-Nk-Yce"/>
@@ -131,7 +140,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ka0-Ib-rce" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1936.8" y="46.326836581709152"/>
+            <point key="canvasLocation" x="2201" y="521"/>
         </scene>
         <!--Now Playing-->
         <scene sceneID="f4c-1A-YSt">
@@ -205,7 +214,7 @@
                                         </view>
                                         <connections>
                                             <outlet property="posterImageView" destination="CxC-1j-bFA" id="lHm-1I-Ibx"/>
-                                            <segue destination="5vD-6I-OsR" kind="show" id="wS7-Uj-Onl"/>
+                                            <segue destination="o56-ih-SbX" kind="show" id="dbD-4l-TYH"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -221,7 +230,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tBR-1f-6XH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="492" y="787.55622188905556"/>
+            <point key="canvasLocation" x="491" y="919"/>
         </scene>
         <!--Superhero Detailed View Controller-->
         <scene sceneID="YyD-qA-YTQ">
@@ -274,7 +283,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S1G-Dk-pvf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1295" y="788"/>
+            <point key="canvasLocation" x="2057" y="1395"/>
         </scene>
         <!--Superhero-->
         <scene sceneID="8NM-PR-AXH">
@@ -293,11 +302,14 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FX8-K6-MiV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-254.40000000000001" y="788.90554722638683"/>
+            <point key="canvasLocation" x="-261" y="920"/>
         </scene>
     </scenes>
     <resources>
         <image name="now_playing_tabbar_item" width="21" height="21"/>
         <image name="superhero_tabbar_item" width="21" height="23"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="EDT-Mf-Tra"/>
+    </inferredMetricsTieBreakers>
 </document>
