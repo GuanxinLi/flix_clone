@@ -28,7 +28,7 @@
                             </activityIndicatorView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wiz-cj-WDO">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <color key="backgroundColor" red="1" green="0.27243828460000002" blue="0.038158689820000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MovieCell" rowHeight="225" id="MJw-w0-qzC" customClass="MovieCell" customModule="flix_clone" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="225"/>
@@ -37,11 +37,10 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="224.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="guP-dY-qgR">
-                                                    <rect key="frame" x="116" y="81" width="251" height="136"/>
-                                                    <color key="backgroundColor" red="1" green="0.60356202896703515" blue="0.93478555850852618" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="guP-dY-qgR">
+                                                    <rect key="frame" x="116" y="52" width="251" height="164.5"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="136" id="lBw-bO-pWK"/>
+                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="136" id="lBw-bO-pWK"/>
                                                     </constraints>
                                                     <string key="text">Despite his family’s baffling generations-old ban on music, Miguel dreams of becoming an accomplished musician like his idol, Ernesto de la Cruz. Desperate to prove his talent, Miguel finds himself in the stunning and colorful Land of the Dead following a mysterious chain of events. Along the way, he meets charming trickster Hector, and together, they set off on an extraordinary journey to unlock the real story behind Miguel's family history.</string>
                                                     <fontDescription key="fontDescription" type="system" weight="thin" pointSize="15"/>
@@ -49,32 +48,35 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coco" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ji5-id-Dc5">
-                                                    <rect key="frame" x="116" y="19" width="42.5" height="54"/>
-                                                    <color key="backgroundColor" red="0.15009039479895558" green="0.72521910790021715" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <rect key="frame" x="116" y="19" width="42.5" height="25"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="25" id="wBN-w3-0io"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                     <size key="shadowOffset" width="0.0" height="0.0"/>
                                                 </label>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Xar-Qr-oCu">
-                                                    <rect key="frame" x="8" y="18" width="100" height="199"/>
+                                                    <rect key="frame" x="8" y="8" width="100" height="170"/>
                                                     <color key="backgroundColor" red="0.40245615165488241" green="0.98132258650000004" blue="0.50538899320113262" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
+                                                        <constraint firstAttribute="height" constant="170" id="T7R-aQ-vtI"/>
                                                         <constraint firstAttribute="width" constant="100" id="kkz-Bz-6IO"/>
                                                     </constraints>
                                                 </imageView>
                                             </subviews>
-                                            <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstItem="Ji5-id-Dc5" firstAttribute="top" secondItem="k9v-kc-UJP" secondAttribute="topMargin" constant="8" id="23A-8Y-kUW"/>
                                                 <constraint firstAttribute="trailing" secondItem="guP-dY-qgR" secondAttribute="trailing" constant="8" id="65O-Fy-83r"/>
                                                 <constraint firstItem="guP-dY-qgR" firstAttribute="leading" secondItem="Xar-Qr-oCu" secondAttribute="trailing" constant="8" id="Guv-OW-LBa"/>
                                                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Ji5-id-Dc5" secondAttribute="trailing" constant="8" id="IQL-zY-cGh"/>
-                                                <constraint firstAttribute="bottom" secondItem="Xar-Qr-oCu" secondAttribute="bottom" constant="8" id="Zh4-nu-RIt"/>
+                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Xar-Qr-oCu" secondAttribute="bottom" constant="8" id="Zh4-nu-RIt"/>
                                                 <constraint firstItem="guP-dY-qgR" firstAttribute="leading" secondItem="Ji5-id-Dc5" secondAttribute="leading" id="cj8-mO-5fh"/>
-                                                <constraint firstAttribute="bottom" secondItem="guP-dY-qgR" secondAttribute="bottom" constant="8" id="dKf-PP-DIk"/>
+                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="guP-dY-qgR" secondAttribute="bottom" constant="8" id="dKf-PP-DIk"/>
                                                 <constraint firstItem="guP-dY-qgR" firstAttribute="top" secondItem="Ji5-id-Dc5" secondAttribute="bottom" constant="8" id="elM-0B-6KT"/>
-                                                <constraint firstItem="Xar-Qr-oCu" firstAttribute="top" secondItem="k9v-kc-UJP" secondAttribute="top" constant="18" id="lb6-AQ-MeM"/>
+                                                <constraint firstItem="Xar-Qr-oCu" firstAttribute="top" secondItem="k9v-kc-UJP" secondAttribute="top" constant="8" id="lb6-AQ-MeM"/>
                                                 <constraint firstItem="Xar-Qr-oCu" firstAttribute="leading" secondItem="k9v-kc-UJP" secondAttribute="leading" constant="8" id="zkr-eg-r0K"/>
                                             </constraints>
                                         </tableViewCellContentView>

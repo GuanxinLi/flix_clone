@@ -34,6 +34,8 @@ class NowPlayingViewController: UIViewController, UITableViewDataSource, UITable
         tableView.insertSubview(refreshControl, at: 0)
         tableView.dataSource = self
         tableView.delegate = self
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 100
         fetchMovies()
     }
     
@@ -99,11 +101,11 @@ class NowPlayingViewController: UIViewController, UITableViewDataSource, UITable
         return movies.count
     }
     
-    
+    /*
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return CGFloat(230)
     }
-    
+    */
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MovieCell", for: indexPath) as! MovieCell
