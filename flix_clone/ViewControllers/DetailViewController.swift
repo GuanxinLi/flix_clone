@@ -32,42 +32,26 @@ class DetailViewController: UIViewController {
         
         if let movie = movie {
             //fetching the data for the movies from Move Datebase API
-            titleLabel.text = movie[MovieKeys.title] as? String
-            releaseDateLabel.text = movie[MovieKeys.releaseDate] as? String
-            overViewLabel.text = movie[MovieKeys.overview] as? String
-            let backdropPathStrings = movie[MovieKeys.backdropPath] as! String
-            let posterPathStrings = movie[MovieKeys.posterPath] as! String
+            titleLabel.text = movie.title
+            releaseDateLabel.text = movie.releaseDate
+            overViewLabel.text = movie.overView
+            let backdropPathString = movie.backDropImageUrl
+            let posterPathString = movie.posterUrl
             let baseURLString = "https://image.tmdb.org/t/p/w500"
             
             // Link BackDrop URL
-            let backdropURL = URL(string: baseURLString + backdropPathStrings)!
+            let backdropURL = URL(string: baseURLString + backdropPathString!)!
             backDropImageView.af_setImage(withURL: backdropURL)
             
             // Link poster URL
-            let posterURL = URL(string: baseURLString + posterPathStrings)!
+            let posterURL = URL(string: baseURLString + posterPathString!)!
             posterImageView.af_setImage(withURL: posterURL)
  
         }
     }
     
-    
-    
-
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
