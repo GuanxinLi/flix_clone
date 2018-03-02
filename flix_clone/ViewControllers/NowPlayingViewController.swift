@@ -16,8 +16,8 @@ class NowPlayingViewController: UIViewController, UITableViewDataSource, UITable
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
-    var movies: [[String: Any]] = []
-    var filteredData: [[String: Any]] = []
+    var movies: [Movie] = []
+    var filteredData: [Movie] = []
     var refreshControl: UIRefreshControl!
     
     override func viewDidLoad() {
@@ -83,12 +83,16 @@ class NowPlayingViewController: UIViewController, UITableViewDataSource, UITable
     }
     
     func updateMovies(data: Data?){
-        let dataDicationary = try! JSONSerialization
+        let dataDictionary = try! JSONSerialization
             .jsonObject(with: data!, options:[]) as! [String: Any]
-        let movies = dataDicationary["results"] as! [[String: Any]]
-        self.movies = movies
+        let movieDictionaries = dataDictionary["results"] as! [[String: Any]]
+        self.movies = []
+        for dictionary in movieDictionaries {
+            let movie = Movie(dictionary: dictionary)
+            self.movies.append(movie)
+        }
         // If no text, filteredData is the same as the original data
-        self.filteredData = self.movies
+        // self.filteredData = self.movies
         self.activityIndicator.stopAnimating()
         self.tableView.reloadData()
         self.refreshControl.endRefreshing()
@@ -103,9 +107,9 @@ class NowPlayingViewController: UIViewController, UITableViewDataSource, UITable
     // Updates filteredData based on the text in the Search Box
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         
-        filteredData = searchText.isEmpty ? movies : movies.filter { (data: [String: Any]) -> Bool in
+        filteredData = searchText.isEmpty ? movies : movies.filter { (data: Movie) -> Bool in
             // If dataItem matches the searchText, return true to include it
-            if let item = data["title"] as? String {
+            if let item = data.title as? String {
                 return item.range(of: searchText, options: .caseInsensitive, range: nil, locale: nil) != nil
             }
             return false
@@ -117,12 +121,12 @@ class NowPlayingViewController: UIViewController, UITableViewDataSource, UITable
         let cell = tableView.dequeueReusableCell(withIdentifier: "MovieCell", for: indexPath) as! MovieCell
         
         let movie = filteredData[indexPath.row]
-        let title = movie["title"] as! String
-        let overview = movie["overview"] as! String
+        let title = movie.title
+        let overview = movie.overView
         cell.titleLabel.text = title
         cell.overviewLabel.text = overview
         
-        let posterPathString = movie["poster_path"] as! String
+        let posterPathString = movie.posterUrl
         let baseURLString = "https://image.tmdb.org/t/p/w500"
         let posterURL = URL(string: baseURLString + posterPathString)!
         cell.posterImageView.af_setImage(withURL: posterURL)
@@ -142,7 +146,6 @@ class NowPlayingViewController: UIViewController, UITableViewDataSource, UITable
             let movie = movies[indexPath.row]
             let detailViewController = segue.destination as! DetailViewController
             detailViewController.movie = movie
-            
         }
     }
     
