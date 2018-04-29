@@ -37,13 +37,32 @@ class NowPlayingViewController: UIViewController, UITableViewDataSource, UITable
         tableView.contentInset = UIEdgeInsets(top:40, left: 0, bottom: 0, right: 0)
         tableView.scrollIndicatorInsets = UIEdgeInsets(top:40, left: 0, bottom: 0, right: 0)
         tableView.addSubview(searchBar) */
-        fetchMovies()
+        MovieApiManager().nowPlayingMovies{ (movies: [Movie]?, error: Error?) in
+            if let movies = movies {
+                self.movies = movies
+                self.tableView.reloadData()
+                self.filteredData = self.movies
+                self.activityIndicator.stopAnimating()
+                self.tableView.reloadData()
+                self.refreshControl.endRefreshing()
+            }
+        }
     }
     
     @objc func didPullToRefresh(_ refreshControll: UIRefreshControl) {
-        fetchMovies()
+        MovieApiManager().nowPlayingMovies{ (movies: [Movie]?, error: Error?) in
+            if let movies = movies {
+                self.movies = movies
+                self.tableView.reloadData()
+                self.filteredData = self.movies
+                self.activityIndicator.stopAnimating()
+                self.tableView.reloadData()
+                self.refreshControl.endRefreshing()
+            }
+        }
     }
     
+    /*
     // Update the new movies once the user pull down the screen
     func fetchMovies(){
         let url = URL(string:
@@ -75,30 +94,27 @@ class NowPlayingViewController: UIViewController, UITableViewDataSource, UITable
                 self.present(alertController, animated: true) {
                     self.fetchMovies()
                 }
-            }else if let data = data {
+            } else if let data = data {
                 self.updateMovies(data: data)
             }
         }
         task.resume()
     }
+ 
     
     func updateMovies(data: Data?){
         let dataDictionary = try! JSONSerialization
             .jsonObject(with: data!, options:[]) as! [String: Any]
         let movieDictionaries = dataDictionary["results"] as! [[String: Any]]
-        self.movies = []
-        for dictionary in movieDictionaries {
-            let movie = Movie(dictionary: dictionary)
-            self.movies.append(movie)
-        }
+        self.movies = Movie.movies(dictionaries: movieDictionaries)
         // If no text, filteredData is the same as the original data
-        // self.filteredData = self.movies
+        self.filteredData = self.movies
         self.activityIndicator.stopAnimating()
         self.tableView.reloadData()
         self.refreshControl.endRefreshing()
         HUD.flash(.success, delay: 1.0)
     }
-    
+    */
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return filteredData.count
@@ -119,20 +135,7 @@ class NowPlayingViewController: UIViewController, UITableViewDataSource, UITable
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MovieCell", for: indexPath) as! MovieCell
-        
-        let movie = filteredData[indexPath.row]
-        let title = movie.title
-        let overview = movie.overView
-        cell.titleLabel.text = title
-        cell.overviewLabel.text = overview
-        
-        let posterPathString = movie.posterUrl
-        let baseURLString = "https://image.tmdb.org/t/p/w500"
-        let posterURL = URL(string: baseURLString + posterPathString)!
-        cell.posterImageView.af_setImage(withURL: posterURL)
-        let backgroundView = UIView()
-        backgroundView.backgroundColor = UIColor.darkGray
-        cell.selectedBackgroundView = backgroundView
+        cell.movie = filteredData[indexPath.row]
         return cell
     }
     

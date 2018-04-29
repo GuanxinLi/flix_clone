@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4F1D41AB4BC0D9876FC89701 /* libPods-flix_cloneTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 41D19A0563276E215DF1A769 /* libPods-flix_cloneTests.a */; };
 		580D92391B72CCCD78CFE284 /* libPods-flix_cloneUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FF63EF2DE0782D097A78F50C /* libPods-flix_cloneUITests.a */; };
+		5A3D64F020492E2A00EA175E /* MovieApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3D64EF20492E2A00EA175E /* MovieApiManager.swift */; };
 		701DB103202A89F6004B4CE7 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701DB102202A89F6004B4CE7 /* DetailViewController.swift */; };
 		7031BD0C202BFAAF00D21C75 /* SuperheroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7031BD0B202BFAAF00D21C75 /* SuperheroViewController.swift */; };
 		7045D42C20235040003EC54D /* NowPlayingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7045D42B20235040003EC54D /* NowPlayingViewController.swift */; };
@@ -44,6 +45,7 @@
 
 /* Begin PBXFileReference section */
 		41D19A0563276E215DF1A769 /* libPods-flix_cloneTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-flix_cloneTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A3D64EF20492E2A00EA175E /* MovieApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MovieApiManager.swift; path = flix_clone/MovieApiManager.swift; sourceTree = SOURCE_ROOT; };
 		701DB102202A89F6004B4CE7 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		7031BD0B202BFAAF00D21C75 /* SuperheroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperheroViewController.swift; sourceTree = "<group>"; };
 		7045D42B20235040003EC54D /* NowPlayingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingViewController.swift; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				709C83AF2028D3FC00A10F51 /* MovieCell.swift */,
+				5A3D64EF20492E2A00EA175E /* MovieApiManager.swift */,
 				7094EA10202FDC8700EF3A1B /* PosterCell.swift */,
 			);
 			path = View;
@@ -499,6 +502,7 @@
 				7045D42C20235040003EC54D /* NowPlayingViewController.swift in Sources */,
 				7094EA1320325F9100EF3A1B /* SuperheroDetailedViewController.swift in Sources */,
 				7031BD0C202BFAAF00D21C75 /* SuperheroViewController.swift in Sources */,
+				5A3D64F020492E2A00EA175E /* MovieApiManager.swift in Sources */,
 				7094EA11202FDC8700EF3A1B /* PosterCell.swift in Sources */,
 				70642E7E2021B2310089CEE4 /* AppDelegate.swift in Sources */,
 				709C83B02028D3FC00A10F51 /* MovieCell.swift in Sources */,

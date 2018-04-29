@@ -10,18 +10,18 @@ import Foundation
 
 class Movie {
     var title: String
-    var backDropImageUrl: URL?
+    var backDropImageUrl: String?
     var releaseDate: String
     var overView: String
-    var posterUrl: URL?
+    var posterUrl: String?
     
     init(dictionary: [String: Any]) {
         title = dictionary["title"] as? String ?? "No title"
         // NULL CHECK
-        backDropImageUrl = dictionary["backdrop_path"] as? URL
+        backDropImageUrl = dictionary["backdrop_path"] as? String
         releaseDate = dictionary["release_date"] as? String ?? "No release date"
         overView = dictionary["overview"] as? String ?? "No overview"
-        posterUrl = dictionary["poster_path"] as? URL
+        posterUrl = dictionary["poster_path"] as? String
     }
     
     class func movies(dictionaries: [[String: Any]]) -> [Movie]{
